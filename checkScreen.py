@@ -58,9 +58,11 @@ def changeHtml(codekey):
 		f.write(stringNew)
 
 def simulateKey(codekey):
-	keyEvent=[87,83,65,68] # W S A D
-	if codekey>0 and codekey<=4:
+	keyEvent = [87,83,65,68,37,39,88,13] # W S A D 左方向键 右方向键 X 回车
+	keyValue = ['W','S','A','D','<-','->','X','回车']
+	if codekey>0 and codekey<=8:
 		win32api.keybd_event(keyEvent[codekey-1],0,0,0)
+		print(keyValue[codekey-1])
 
 def main():
 	count = 0
@@ -73,9 +75,11 @@ def main():
 		# 3. 将获取的内容输入到html文件中（用于展示中间结果）
 		changeHtml(codekey)
 
-		print(codekey)
 		# 4. 键盘鼠标模拟
+		simulateKey(codekey)
+		
 		count += 1
+		print(codekey)
 		time.sleep(SLEEP_TIME)
 
 if __name__ == '__main__':

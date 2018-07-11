@@ -7,5 +7,6 @@
 
 ### 文件说明
 - notebook.ipynb  教程文件 请使用jupyter打开
-- index.html      
-- example.jpg 样例图片 用于实验
+- index.html 用于显示按下数据的值的网页
+- example 样例图片文件夹 在教程文件中用于辅助教学
+- checkScreen.py  主要代码集成
